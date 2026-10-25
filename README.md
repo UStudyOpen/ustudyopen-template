@@ -29,3 +29,18 @@ Desde el repositorio central: `python3 tooling/sync_course.py ../nombre-del-curs
 ## Licencias
 
 Véanse [alcance](LICENSING.md) y [avisos de terceros](THIRD-PARTY-NOTICES.md).
+
+## Crear otra asignatura con licencias reproducibles
+
+Usar `tooling/create_course.py` desde UStudyOpen Design con `--author`, `--name`
+y `--authorize-original-content`. La autorización explícita habilita CC-BY-NC-4.0
+para lecciones originales nuevas; `--license` permite otra elección revisada.
+Los ejemplos heredados conservan MIT de ngulloa. El generador configura el curso
+localmente, valida sus avisos y no crea repositorios ni publica.
+
+Las nuevas lecciones originales de la asignatura pueden agregarse en `lecciones/`
+sin editar LICENSE. Los recursos externos requieren registrar origen, versión,
+SPDX, texto y revisión de NOTICE en `licensing.json`. Ejecutar
+`python3 tests/licensing.py --reuse` en el entorno fijado por
+`tests/requirements-licensing.txt`. El workflow de validación ya instala ese entorno.
+La guía completa está en `ustudyopen-design/docs/AUTOMATIZACION-LICENCIAS.md`.
